@@ -1,0 +1,71 @@
+<div class="bg-gray-800/85 text-white sticky top-0 backdrop-blur-xl z-30">
+  <nav class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between items-center py-3">
+      <!-- Logo y enlace del sitio -->
+      <div class="flex-shrink-0">
+        <a
+          href="#"
+          class="flex items-center text-[#ecd06f] hover:text-[#eeca49] hover:scale-150 transition-all"
+        >
+          <svg
+            class="h-6 w-6 mr-3 text-blue-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <!-- Icono SVG aquí -->
+          </svg>
+          <span class="font-bold">Brenda y Asociados</span>
+        </a>
+      </div>
+
+      <!-- Navegación principal -->
+      <div class="hidden md:flex space-x-4">
+        <a href="#" class="py-2 px-3 hover:text-[#ecd06f]">Inicio</a>
+        <a href="#" class="py-2 px-3 hover:text-[#ecd06f]">Servicios</a>
+        <a href="#" class="py-2 px-3 hover:text-[#ecd06f]">Contacto</a>
+      </div>
+
+      <!-- Botón del menú móvil -->
+      <div class="md:hidden">
+        <button class="mobile-menu-button">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Menú móvil -->
+  <div class="mobile-menu hidden md:hidden">
+    <a href="#" class="block py-2 px-4 text-sm hover:text-[#ecd06f]">Inicio</a>
+    <a href="#" class="block py-2 px-4 text-sm hover:text-[#ecd06f]"
+      >Servicios</a
+    >
+    <a href="#" class="block py-2 px-4 text-sm hover:text-[#ecd06f]">Contacto</a
+    >
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.querySelector(".mobile-menu-button");
+    const mobileMenu = document.querySelector(".mobile-menu");
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
+  });
+</script>
