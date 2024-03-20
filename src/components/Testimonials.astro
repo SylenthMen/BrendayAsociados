@@ -1,0 +1,23 @@
+---
+import CardTestimonial from "../components/CardTestimonial.astro";
+---
+
+<section class="p-6 bg-gradient-to-r from-gray-800 to-indigo-900/75">
+  <article>
+    <h3 class="uppercase text-3xl text-[#d9b42d] font-bold text-center">
+      testimonios y casos de exito
+    </h3>
+    <CardTestimonial
+      imgtestigo="/tes1.webp"
+      nombre="Alice Chu"
+      cargo="Marketing Manager"
+      testimonio="la mejor empresa para manejar grandes cargas de trabajo siendo claros y honestos desde el principio, siempre me acompañaron en el proceso de mi aprendizaje."
+    />
+    <CardTestimonial
+      imgtestigo="/tes2.webp"
+      nombre="chris hughes"
+      cargo="CEO EmprendeSoft"
+      testimonio="Gracias a su asesoramiento y acompañamiento logramos llevar a cabo nuestro proyecto de manera exitosa, siempre estuvieron a la altura de las circunstancias."
+    />
+  </article>
+</section>
