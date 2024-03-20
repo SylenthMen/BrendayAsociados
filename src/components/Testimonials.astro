@@ -2,22 +2,37 @@
 import CardTestimonial from "../components/CardTestimonial.astro";
 ---
 
-<section class="p-6 bg-gradient-to-r from-gray-800 to-indigo-900/75">
+<section
+  id="testimonios"
+  class="p-6 m-4 bg-gradient-to-r from-gray-800 to-indigo-900/75"
+>
   <article>
     <h3 class="uppercase text-3xl text-[#d9b42d] font-bold text-center">
       testimonios y casos de exito
     </h3>
     <CardTestimonial
       imgtestigo="/tes1.webp"
-      nombre="Alice Chu"
-      cargo="Marketing Manager"
-      testimonio="la mejor empresa para manejar grandes cargas de trabajo siendo claros y honestos desde el principio, siempre me acompañaron en el proceso de mi aprendizaje."
+      nombre="BAC Agencia Creativa"
+      cargo="Servicios de mercadotecnia online"
+      testimonio="Realizaron la constitución legal y el proceso administrativo de mi agencia creativa para lograr alcanzar mis metas."
     />
     <CardTestimonial
       imgtestigo="/tes2.webp"
-      nombre="chris hughes"
-      cargo="CEO EmprendeSoft"
-      testimonio="Gracias a su asesoramiento y acompañamiento logramos llevar a cabo nuestro proyecto de manera exitosa, siempre estuvieron a la altura de las circunstancias."
+      nombre="Edgar Méndez"
+      cargo="Psicoterapeuta"
+      testimonio="Semana a semana gestionan mi agenda virtual y generan estrategias administrativas para solo enfocarme en mis pacientes."
     />
   </article>
 </section>
+
+<style>
+  section {
+    border: 2px solid #d9b42d;
+    border-radius: 250px 25px 250px 25px;
+  }
+  @media (max-width: 768px) {
+    section {
+      border-radius: 0;
+    }
+  }
+</style>
