@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Contact Form</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("Ulk2z0R7OkSlHVr6d"); // Reemplaza con tu User ID real
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            emailjs.sendForm("service_bxvcb15", "template_4wefmva", this).then(
+              () => {
+                document.getElementById("modalSuccess").style.display = "block";
+              },
+              (error) => {
+                document.getElementById("modalError").style.display = "block";
+              }
+            );
+          });
+      };
+
+      function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+      }
+    </script>
+    <style>
+      input:focus,
+      textarea:focus {
+        border: 1px solid #fbbf24;
+      }
+
+      textarea {
+        height: 150px;
+        resize: none;
+      }
+
+      .modal {
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+        padding-top: 60px;
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Formulario -->
+    <form
+      class="flex flex-col w-[400px] m-auto justify-center items-center p-4 gap-y-4"
+      id="contact-form"
+    >
+      <input
+        class="border rounded-lg bg-gray-800 text-white p-2 outline-none w-full"
+        type="hidden"
+        name="contact_number"
+        value="697483"
+        required
+      />
+      <!-- Campos del formulario -->
+      <label class="text-yellow-700 font-bold">Nombre</label>
+      <input
+        class="-mt-4 border rounded-lg bg-gray-800 text-white p-2 outline-none w-full"
+        type="text"
+        name="user_name"
+        required
+        placeholder="Nombre completo"
+      />
+      <label class="text-yellow-700 font-bold">Correo Electronico</label>
+      <input
+        class="-mt-4 border rounded-lg bg-gray-800 text-white p-2 outline-none w-full"
+        type="email"
+        name="user_email"
+        required
+        placeholder="Correo electronico"
+      />
+      <label class="text-yellow-700 font-bold">Mensaje</label>
+      <textarea
+        class="-mt-4 border rounded-lg bg-gray-800 text-white p-2 outline-none w-full"
+        name="message"
+        required
+        placeholder="Escriba su mensaje"></textarea>
+      <input
+        class="bg-yellow-700 p-2 text-white rounded-xl w-56 hover:bg-yellow-600 cursor-pointer"
+        type="submit"
+        value="Enviar"
+      />
+    </form>
+
+    <!-- Modales -->
+    <div id="modalSuccess" class="modal" style="display:none;">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modalSuccess')">&times;</span>
+        <p>Email enviado con éxito.</p>
+      </div>
+    </div>
+
+    <div id="modalError" class="modal" style="display:none;">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modalError')">&times;</span>
+        <p>Error al enviar el formulario.</p>
+      </div>
+    </div>
+  </body>
+</html>
