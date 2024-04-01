@@ -60,8 +60,19 @@
       function acceptCookies() {
         var cookieContainer = document.getElementById("cookieContainer");
         cookieContainer.style.display = "none";
-        // Aquí puedes agregar tu lógica para guardar el consentimiento del usuario, como establecer una cookie o enviar datos al servidor.
+        localStorage.setItem("cookieBannerDisplayed", "true");
       }
+
+      // Verificar si el aviso de cookies ya ha sido mostrado anteriormente
+      window.onload = function () {
+        var isCookieBannerDisplayed = localStorage.getItem(
+          "cookieBannerDisplayed"
+        );
+        if (isCookieBannerDisplayed) {
+          var cookieContainer = document.getElementById("cookieContainer");
+          cookieContainer.style.display = "none";
+        }
+      };
     </script>
   </body>
 </html>
