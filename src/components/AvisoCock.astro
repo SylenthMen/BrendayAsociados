@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aviso de Cookies</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      .cookie-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #0c165295;
+        backdrop-filter: blur(15px);
+        web-kit-backdrop-filter: blur(15px);
+        padding: 15px 20px;
+        color: #fff;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+      }
+      .cookie-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .cookie-btn {
+        padding: 10px 20px;
+        background-color: #a7af4c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+      .cookie-btn:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cookie-container" id="cookieContainer">
+      <div class="cookie-content">
+        <p>
+          Utilizamos cookies para mejorar tu experiencia en nuestro sitio web.
+          Al hacer clic en "Aceptar", aceptas el uso de todas las cookies de
+          acuerdo con nuestra <a href="#">Política de Cookies</a>.
+        </p>
+        <button class="cookie-btn" onclick="acceptCookies()">Aceptar</button>
+      </div>
+    </div>
+
+    <script>
+      function acceptCookies() {
+        var cookieContainer = document.getElementById("cookieContainer");
+        cookieContainer.style.display = "none";
+        // Aquí puedes agregar tu lógica para guardar el consentimiento del usuario, como establecer una cookie o enviar datos al servidor.
+      }
+    </script>
+  </body>
+</html>
